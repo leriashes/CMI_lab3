@@ -16,5 +16,6 @@ namespace CMI_lab3
         {
             InitializeComponent();
         }
+
     }
 }
