@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -135,6 +132,9 @@
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -201,47 +201,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView1_RowsAdded);
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column1.FillWeight = 29.10055F;
-            this.Column1.HeaderText = "1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 108.4939F;
-            this.Column2.HeaderText = "2";
-            this.Column2.Items.AddRange(new object[] {
-            "Маковый рулет",
-            "Пирожное \"Картошка\"",
-            "Торт \"Медовик\"",
-            "Торт \"Наполеон\"",
-            "Торт \"Новинка\"",
-            "Торт \"Сказка\"",
-            "Трубочка с варёной сгущёнкой"});
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 47.33487F;
-            this.Column3.HeaderText = "3";
-            this.Column3.Items.AddRange(new object[] {
-            "105",
-            "127",
-            "162",
-            "164",
-            "165",
-            "169",
-            "171"});
-            this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // label1
             // 
@@ -863,6 +822,7 @@
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView2.Size = new System.Drawing.Size(281, 43);
             this.dataGridView2.TabIndex = 12;
+            this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellValueChanged);
             this.dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView2_RowsAdded);
             // 
             // Column4
@@ -871,6 +831,11 @@
             this.Column4.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column4.FillWeight = 56.32365F;
             this.Column4.HeaderText = "4";
+            this.Column4.Items.AddRange(new object[] {
+            "г",
+            "кг",
+            "набор",
+            "шт"});
             this.Column4.Name = "Column4";
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column4.Width = 60;
@@ -879,6 +844,11 @@
             // 
             this.Column5.FillWeight = 66.45901F;
             this.Column5.HeaderText = "5";
+            this.Column5.Items.AddRange(new object[] {
+            "163",
+            "166",
+            "704",
+            "796"});
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column5.Width = 60;
@@ -1242,6 +1212,47 @@
             this.button2.Text = "Сохранить";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // Column1
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.FillWeight = 29.10055F;
+            this.Column1.HeaderText = "1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 108.4939F;
+            this.Column2.HeaderText = "2";
+            this.Column2.Items.AddRange(new object[] {
+            "Маковый рулет",
+            "Пирожное \"Картошка\"",
+            "Торт \"Медовик\"",
+            "Торт \"Наполеон\"",
+            "Торт \"Новинка\"",
+            "Торт \"Сказка\"",
+            "Трубочка с вареной сгущенкой"});
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 47.33487F;
+            this.Column3.HeaderText = "3";
+            this.Column3.Items.AddRange(new object[] {
+            "105",
+            "127",
+            "162",
+            "164",
+            "165",
+            "169",
+            "171"});
+            this.Column3.Name = "Column3";
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1357,10 +1368,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Panel panel16;
@@ -1419,6 +1426,10 @@
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column3;

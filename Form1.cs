@@ -75,17 +75,17 @@ namespace CMI_lab3
 
                 if (e.ColumnIndex == 1 || e.ColumnIndex == 2)
                 {
-                    for (int i = 0; i < Column2.Items.Count && val1 < 0; i++)
+                    for (int i = 0; i < Column2.Items.Count && val1 < 0 && dataGridView1.Rows[e.RowIndex].Cells[1].Value != null; i++)
                     {
-                        if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == Column2.Items[i].ToString())
+                        if (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() == Column2.Items[i].ToString())
                         {
                             val1 = i;
                         }
                     }
 
-                    for (int i = 0; i < Column3.Items.Count && val2 < 0; i++)
+                    for (int i = 0; i < Column3.Items.Count && val2 < 0 && dataGridView1.Rows[e.RowIndex].Cells[2].Value != null; i++)
                     {
-                        if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == Column3.Items[i].ToString())
+                        if (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() == Column3.Items[i].ToString())
                         {
                             val2 = i;
                         }
@@ -101,6 +101,47 @@ namespace CMI_lab3
                         else
                         {
                             dataGridView1.Rows[e.RowIndex].Cells[1].Value = Column2.Items[val2];
+                        }
+                    }
+                }
+            }
+        }
+
+        private void DataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int val1 = -1;
+                int val2 = -1;
+
+                if (e.ColumnIndex == 0 || e.ColumnIndex == 1)
+                {
+                    for (int i = 0; i < Column4.Items.Count && val1 < 0 && dataGridView2.Rows[e.RowIndex].Cells[0].Value != null; i++)
+                    {
+                        if (dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString() == Column4.Items[i].ToString())
+                        {
+                            val1 = i;
+                        }
+                    }
+
+                    for (int i = 0; i < Column5.Items.Count && val2 < 0 && dataGridView2.Rows[e.RowIndex].Cells[1].Value != null; i++)
+                    {
+                        if (dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString() == Column5.Items[i].ToString())
+                        {
+                            val2 = i;
+                        }
+                    }
+
+
+                    if (val1 != val2)
+                    {
+                        if (e.ColumnIndex == 0)
+                        {
+                            dataGridView2.Rows[e.RowIndex].Cells[1].Value = Column5.Items[val1];
+                        }
+                        else
+                        {
+                            dataGridView2.Rows[e.RowIndex].Cells[0].Value = Column4.Items[val2];
                         }
                     }
                 }
