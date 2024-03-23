@@ -19,17 +19,14 @@ namespace CMI_lab3
             InitializeComponent();
         }
 
-        private void DataGridView2_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void AddRows(int delta, DataGridView table1, DataGridView table2)
         {
-            int delta = dataGridView2.Rows.Count - countRows;
-
             countRows += delta;
 
-            for (; delta > 0; delta--) 
+            for (; delta > 0; delta--)
             {
-                dataGridView1.Rows.Add();
-
-                dataGridView3.Rows.Add();
+                table1.Rows.Add();
+                table2.Rows.Add();
 
                 if (tabControl1.Height < 312)
                 {
@@ -46,10 +43,68 @@ namespace CMI_lab3
             }
         }
 
+        private void DataGridView2_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            int delta = dataGridView2.Rows.Count - countRows;
+
+            AddRows(delta, dataGridView1, dataGridView3);
+        }
+
         private void DataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells[0].Value = dataGridView1.Rows.Count - 1;
+
+            int delta = dataGridView1.Rows.Count - countRows;
+
+            AddRows(delta, dataGridView2, dataGridView3);
         }
 
+        private void DataGridView3_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            int delta = dataGridView3.Rows.Count - countRows;
+
+            AddRows(delta, dataGridView1, dataGridView2);
+        }
+
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int val1 = -1;
+                int val2 = -1;
+
+                if (e.ColumnIndex == 1 || e.ColumnIndex == 2)
+                {
+                    for (int i = 0; i < Column2.Items.Count && val1 < 0; i++)
+                    {
+                        if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == Column2.Items[i].ToString())
+                        {
+                            val1 = i;
+                        }
+                    }
+
+                    for (int i = 0; i < Column3.Items.Count && val2 < 0; i++)
+                    {
+                        if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == Column3.Items[i].ToString())
+                        {
+                            val2 = i;
+                        }
+                    }
+
+
+                    if (val1 != val2)
+                    {
+                        if (e.ColumnIndex == 1)
+                        {
+                            dataGridView1.Rows[e.RowIndex].Cells[2].Value = Column3.Items[val1];
+                        }
+                        else
+                        {
+                            dataGridView1.Rows[e.RowIndex].Cells[1].Value = Column2.Items[val2];
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -199,6 +199,7 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(259, 42);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView1_RowsAdded);
             // 
             // Column1
@@ -216,6 +217,14 @@
             // 
             this.Column2.FillWeight = 108.4939F;
             this.Column2.HeaderText = "2";
+            this.Column2.Items.AddRange(new object[] {
+            "Маковый рулет",
+            "Пирожное \"Картошка\"",
+            "Торт \"Медовик\"",
+            "Торт \"Наполеон\"",
+            "Торт \"Новинка\"",
+            "Торт \"Сказка\"",
+            "Трубочка с варёной сгущёнкой"});
             this.Column2.Name = "Column2";
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
@@ -223,6 +232,14 @@
             // 
             this.Column3.FillWeight = 47.33487F;
             this.Column3.HeaderText = "3";
+            this.Column3.Items.AddRange(new object[] {
+            "105",
+            "127",
+            "162",
+            "164",
+            "165",
+            "169",
+            "171"});
             this.Column3.Name = "Column3";
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
@@ -390,6 +407,7 @@
             this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView3.Size = new System.Drawing.Size(770, 43);
             this.dataGridView3.TabIndex = 12;
+            this.dataGridView3.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView3_RowsAdded);
             // 
             // Column8
             // 
@@ -1311,9 +1329,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
@@ -1404,6 +1419,9 @@
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
     }
 }
 
