@@ -19,7 +19,7 @@ namespace CMI_lab3
             InitializeComponent();
         }
 
-        private void AddRows(int delta, DataGridView table1, DataGridView table2)
+        private void AddRows(int delta, DataGridView table, DataGridView table1, DataGridView table2)
         {
             countRows += delta;
 
@@ -40,6 +40,12 @@ namespace CMI_lab3
                 {
                     vScrollBar1.Visible = true;
                 }
+
+                if (vScrollBar1.Visible)
+                {
+                    vScrollBar1.Maximum = dataGridView1.RowCount;
+                    vScrollBar1.Value = table.FirstDisplayedScrollingRowIndex;
+                }
             }
         }
 
@@ -47,7 +53,7 @@ namespace CMI_lab3
         {
             int delta = dataGridView2.Rows.Count - countRows;
 
-            AddRows(delta, dataGridView1, dataGridView3);
+            AddRows(delta, dataGridView2, dataGridView1, dataGridView3);
         }
 
         private void DataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -56,14 +62,14 @@ namespace CMI_lab3
 
             int delta = dataGridView1.Rows.Count - countRows;
 
-            AddRows(delta, dataGridView2, dataGridView3);
+            AddRows(delta, dataGridView1, dataGridView2, dataGridView3);
         }
 
         private void DataGridView3_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             int delta = dataGridView3.Rows.Count - countRows;
 
-            AddRows(delta, dataGridView1, dataGridView2);
+            AddRows(delta, dataGridView3, dataGridView1, dataGridView2);
         }
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -147,5 +153,31 @@ namespace CMI_lab3
                 }
             }
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+        }
+
+        private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            //dataGridView1.FirstDisplayedScrollingRowIndex = 2;
+            //dataGridView2.FirstDisplayedScrollingRowIndex = 2;
+            //dataGridView3.FirstDisplayedScrollingRowIndex = 2;
+        }
+
+        private void VScrollBar1_ValueChanged(object sender, EventArgs e)
+        {
+            dataGridView1.FirstDisplayedScrollingRowIndex = vScrollBar1.Value;
+            dataGridView2.FirstDisplayedScrollingRowIndex = vScrollBar1.Value;
+            dataGridView3.FirstDisplayedScrollingRowIndex = vScrollBar1.Value;
+        }
+
+        private void DataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
