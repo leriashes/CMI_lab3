@@ -942,12 +942,14 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "ИП Гефке Алла Викторовна",
             "ИП Рогова Галина Анатольевна",
-            "ООО \"Алтайские зори\"",
+            "ООО \"Алтайские Зори\"",
             "ООО \"Форне\"",
             "ООО \"Форне Кондитер\""});
             this.comboBox1.Location = new System.Drawing.Point(236, 124);
@@ -958,7 +960,11 @@
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Кондитерский цех",
+            "Хлебобулочный цех"});
             this.comboBox2.Location = new System.Drawing.Point(236, 148);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(558, 21);
@@ -1196,13 +1202,15 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "ИП Гефке Алла Викторовна",
-            "ИП Рогова Галина Анатольевна",
-            "ООО \"Алтайские зори\"",
-            "ООО \"Форне\"",
-            "ООО \"Форне Кондитер\""});
+            "2016639571",
+            "2141051250",
+            "10006475",
+            "52078951",
+            "65386358"});
             this.comboBox3.Location = new System.Drawing.Point(806, 124);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(192, 21);
@@ -1210,13 +1218,14 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            "ИП Гефке Алла Викторовна",
-            "ИП Рогова Галина Анатольевна",
-            "ООО \"Алтайские зори\"",
-            "ООО \"Форне\"",
-            "ООО \"Форне Кондитер\""});
+            "10.71",
+            "10.72",
+            "47.11",
+            "47.24"});
             this.comboBox4.Location = new System.Drawing.Point(4, 86);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(192, 21);
@@ -1224,6 +1233,8 @@
             // 
             // comboBox5
             // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
             "ИП Гефке Алла Викторовна",
