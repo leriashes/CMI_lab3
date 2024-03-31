@@ -17,6 +17,23 @@ namespace CMI_lab3
         int countRows = 1;
         string[] zaver;
 
+        string[] OKPO = { "2016639571",
+            "2141051250",
+            "10006475",
+            "52078951",
+            "65386358"};
+
+        string[] OKDP =
+        {
+            "10.71",
+            "10.72",
+            "47.11",
+            "47.24",
+            "10.71"
+        };
+
+
+
         public Form1()
         {
             zaver = new string[4];
@@ -344,6 +361,12 @@ namespace CMI_lab3
             //Save workbook to disk
             workbook.SaveToFile("Sample.xls");
 
+        }
+
+        private void ComboBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = OKPO[comboBox1.SelectedIndex];
+            textBox2.Text = OKDP[comboBox1.SelectedIndex];
         }
     }
 }
