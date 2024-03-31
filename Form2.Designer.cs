@@ -47,11 +47,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(73, 9);
+            this.label1.Location = new System.Drawing.Point(29, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 16);
+            this.label1.Size = new System.Drawing.Size(258, 16);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Заверительная часть";
+            this.label1.Text = "Материально-ответсвенные лица";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label30
@@ -181,7 +181,7 @@
             this.MinimumSize = new System.Drawing.Size(327, 393);
             this.Name = "Form2";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Заверительная часть";
+            this.Text = "Расшифровки подписей";
             this.ResumeLayout(false);
             this.PerformLayout();
 

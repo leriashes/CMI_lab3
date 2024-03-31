@@ -89,26 +89,26 @@ namespace CMI_lab3
                         }
                     }
 
-                    for (int i = 0; i < Column3.Items.Count && val2 < 0 && dataGridView1.Rows[e.RowIndex].Cells[2].Value != null; i++)
-                    {
-                        if (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() == Column3.Items[i].ToString())
-                        {
-                            val2 = i;
-                        }
-                    }
+                    //for (int i = 0; i < Column3.Items.Count && val2 < 0 && dataGridView1.Rows[e.RowIndex].Cells[2].Value != null; i++)
+                    //{
+                    //    if (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() == Column3.Items[i].ToString())
+                    //    {
+                    //        val2 = i;
+                    //    }
+                    //}
 
 
-                    if (val1 != val2)
-                    {
-                        if (e.ColumnIndex == 1)
-                        {
-                            dataGridView1.Rows[e.RowIndex].Cells[2].Value = Column3.Items[val1];
-                        }
-                        else
-                        {
-                            dataGridView1.Rows[e.RowIndex].Cells[1].Value = Column2.Items[val2];
-                        }
-                    }
+                    //if (val1 != val2)
+                    //{
+                    //    if (e.ColumnIndex == 1)
+                    //    {
+                    //        dataGridView1.Rows[e.RowIndex].Cells[2].Value = Column3.Items[val1];
+                    //    }
+                    //    else
+                    //    {
+                    //        dataGridView1.Rows[e.RowIndex].Cells[1].Value = Column2.Items[val2];
+                    //    }
+                    //}
                 }
             }
         }
@@ -130,26 +130,26 @@ namespace CMI_lab3
                         }
                     }
 
-                    for (int i = 0; i < Column5.Items.Count && val2 < 0 && dataGridView2.Rows[e.RowIndex].Cells[1].Value != null; i++)
-                    {
-                        if (dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString() == Column5.Items[i].ToString())
-                        {
-                            val2 = i;
-                        }
-                    }
+                    //for (int i = 0; i < Column5.Items.Count && val2 < 0 && dataGridView2.Rows[e.RowIndex].Cells[1].Value != null; i++)
+                    //{
+                    //    if (dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString() == Column5.Items[i].ToString())
+                    //    {
+                    //        val2 = i;
+                    //    }
+                    //}
 
 
-                    if (val1 != val2)
-                    {
-                        if (e.ColumnIndex == 0)
-                        {
-                            dataGridView2.Rows[e.RowIndex].Cells[1].Value = Column5.Items[val1];
-                        }
-                        else
-                        {
-                            dataGridView2.Rows[e.RowIndex].Cells[0].Value = Column4.Items[val2];
-                        }
-                    }
+                    //if (val1 != val2)
+                    //{
+                    //    if (e.ColumnIndex == 0)
+                    //    {
+                    //        dataGridView2.Rows[e.RowIndex].Cells[1].Value = Column5.Items[val1];
+                    //    }
+                    //    else
+                    //    {
+                    //        dataGridView2.Rows[e.RowIndex].Cells[0].Value = Column4.Items[val2];
+                    //    }
+                    //}
                 }
             }
         }
