@@ -15,9 +15,11 @@ namespace CMI_lab3
     public partial class Form1 : Form
     {
         int countRows = 1;
+        string[] zaver;
 
         public Form1()
         {
+            zaver = new string[4];
             InitializeComponent();
         }
 
@@ -161,8 +163,17 @@ namespace CMI_lab3
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            string[] zfio = new string[4];
+            Form2 form2 = new Form2(zfio);
             form2.ShowDialog();
+
+            if (form2.DialogResult == DialogResult.OK)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    zaver[i] = zfio[i];
+                }
+            }
         }
 
         private void VScrollBar1_ValueChanged(object sender, EventArgs e)
@@ -294,32 +305,21 @@ namespace CMI_lab3
             Worksheet sheet = workbook.Worksheets[0];
 
 
-            if (comboBox1.Text != null)
-                sheet.Range["A7"].Text = comboBox1.Text;
+            sheet.Range["A7"].Text = comboBox1.Text;
+            sheet.Range["A9"].Text = comboBox2.Text;
+            sheet.Range["BA13"].Text = textBox5.Text;
+            sheet.Range["CA7"].Text = textBox1.Text;
+            sheet.Range["CA10"].Text = textBox2.Text;
+            sheet.Range["CA11"].Text = comboBox5.Text;
 
-            if (comboBox2.Text != null)
-                sheet.Range["A9"].Text = comboBox2.Text;
-
-            if (textBox5.Text != null)
-                sheet.Range["BA13"].Text = textBox5.Text;
-
-            if (textBox1.Text != null)
-                sheet.Range["CA7"].Text = textBox1.Text;
-
-            if (textBox2.Text != null)
-                sheet.Range["CA10"].Text = textBox2.Text;
-
-            if (comboBox5.Text != null)
-                sheet.Range["CA11"].Text = comboBox5.Text;
-
-            if (dateTimePicker1.Text != null)
+            if (dateTimePicker1.Text != "")
             {
                 dateTimePicker1.Format = DateTimePickerFormat.Short;
                 sheet.Range["BL13"].Text = dateTimePicker1.Text;
                 dateTimePicker1.Format = DateTimePickerFormat.Long;
             }
 
-            if (dateTimePicker2.Text != null)
+            if (dateTimePicker2.Text != "")
             {
                 string[] words = dateTimePicker2.Text.Split(' ');
                 sheet.Range["AI17"].Text = words[0];
@@ -327,13 +327,18 @@ namespace CMI_lab3
                 sheet.Range["AR17"].Text = words[2];
             }
 
-            if (dateTimePicker3.Text != null)
+            if (dateTimePicker3.Text != "")
             {
                 string[] words = dateTimePicker3.Text.Split(' ');
                 sheet.Range["BZ17"].Text = words[0];
                 sheet.Range["CD17"].Text = words[1];
                 sheet.Range["CJ17"].Text = words[2];
             }
+
+            sheet.Range["R32"].Text = zaver[0];
+            sheet.Range["BC32"].Text = zaver[1];
+            sheet.Range["S34"].Text = zaver[3];
+            sheet.Range["AX34"].Text = zaver[2];
 
 
             //Save workbook to disk
