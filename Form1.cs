@@ -189,5 +189,41 @@ namespace CMI_lab3
         {
             vScrollBar1.Value = dataGridView3.FirstDisplayedScrollingRowIndex;
         }
+
+        private void DataGridView1_Leave(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++) 
+            {
+                for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++) 
+                {
+                    if (dataGridView1.Rows[i].Cells[j].Selected)
+                        dataGridView1.Rows[i].Cells[j].Selected = false;
+                }
+            }
+        }
+
+        private void DataGridView2_Leave(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView2.Rows[i].Cells.Count; j++)
+                {
+                    if (dataGridView2.Rows[i].Cells[j].Selected)
+                        dataGridView2.Rows[i].Cells[j].Selected = false;
+                }
+            }
+        }
+
+        private void DataGridView3_Leave(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView3.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView3.Rows[i].Cells.Count; j++)
+                {
+                    if (dataGridView3.Rows[i].Cells[j].Selected)
+                        dataGridView3.Rows[i].Cells[j].Selected = false;
+                }
+            }
+        }
     }
 }

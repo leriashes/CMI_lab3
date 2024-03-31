@@ -212,6 +212,7 @@
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_RowEnter);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView1_RowsAdded);
+            this.dataGridView1.Leave += new System.EventHandler(this.DataGridView1_Leave);
             // 
             // Column1
             // 
@@ -399,6 +400,7 @@
             this.dataGridView3.TabIndex = 12;
             this.dataGridView3.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView3_RowEnter);
             this.dataGridView3.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView3_RowsAdded);
+            this.dataGridView3.Leave += new System.EventHandler(this.DataGridView3_Leave);
             // 
             // Column8
             // 
@@ -866,6 +868,7 @@
             this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellValueChanged);
             this.dataGridView2.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_RowEnter);
             this.dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView2_RowsAdded);
+            this.dataGridView2.Leave += new System.EventHandler(this.DataGridView2_Leave);
             // 
             // Column4
             // 
