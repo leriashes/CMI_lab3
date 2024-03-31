@@ -177,17 +177,20 @@ namespace CMI_lab3
 
         private void DataGridView2_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            vScrollBar1.Value = dataGridView2.FirstDisplayedScrollingRowIndex;
+            if (vScrollBar1.Visible)
+                vScrollBar1.Value = dataGridView2.FirstDisplayedScrollingRowIndex;
         }
 
         private void DataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            vScrollBar1.Value = dataGridView1.FirstDisplayedScrollingRowIndex;
+            if (vScrollBar1.Visible)
+                vScrollBar1.Value = dataGridView1.FirstDisplayedScrollingRowIndex;
         }
 
         private void DataGridView3_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            vScrollBar1.Value = dataGridView3.FirstDisplayedScrollingRowIndex;
+            if (vScrollBar1.Visible)
+                vScrollBar1.Value = dataGridView3.FirstDisplayedScrollingRowIndex;
         }
 
         private void DataGridView1_Leave(object sender, EventArgs e)
@@ -224,6 +227,58 @@ namespace CMI_lab3
                         dataGridView3.Rows[i].Cells[j].Selected = false;
                 }
             }
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                dataGridView2.Rows[i].Selected = dataGridView1.Rows[i].Selected;
+            }
+
+            for (int i = 0; i < dataGridView3.Rows.Count; i++)
+            {
+                dataGridView3.Rows[i].Selected = dataGridView1.Rows[i].Selected;
+            }
+        }
+
+        private void DeleteRow()
+        {
+            if (dataGridView1.Rows.Count == 10)
+            {
+                vScrollBar1.Visible = false;
+            }
+            
+            if (tabControl1.Height > 21 && !vScrollBar1.Visible)
+            {
+                label37.Location = new System.Drawing.Point(label37.Location.X, label37.Location.Y - 20);
+                dataGridView4.Location = new System.Drawing.Point(dataGridView4.Location.X, dataGridView4.Location.Y - 20);
+
+                dataGridView1.Height -= 20;
+                dataGridView2.Height -= 20;
+                dataGridView3.Height -= 20;
+
+                tabControl1.Height -= 20;
+            }
+
+            if (vScrollBar1.Visible)
+            {
+                vScrollBar1.Maximum = dataGridView1.RowCount - 9;
+                vScrollBar1.Value = dataGridView1.FirstDisplayedScrollingRowIndex + 1;
+            }
+        }
+
+        private void DataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            if (e.Row.Index != dataGridView1.RowCount - 1)
+            {
+                dataGridView2.Rows.RemoveAt(e.Row.Index);
+                dataGridView3.Rows.RemoveAt(e.Row.Index);
+                countRows--;
+
+                DeleteRow();
+            }
+            
         }
     }
 }
