@@ -1336,7 +1336,6 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
             this.dateTimePicker2.Location = new System.Drawing.Point(3, 17);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(117, 20);
