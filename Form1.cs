@@ -25,26 +25,29 @@ namespace CMI_lab3
 
             for (; delta > 0; delta--)
             {
-                table1.Rows.Add();
-                table2.Rows.Add();
-
-                if (tabControl1.Height < 312)
+                if (tabControl1.Height < 300)
                 {
-                    dataGridView1.Height += 22;
-                    dataGridView2.Height += 22;
-                    dataGridView3.Height += 22;
+                    label37.Location = new System.Drawing.Point(label37.Location.X, label37.Location.Y + 20);
+                    dataGridView4.Location = new System.Drawing.Point(dataGridView4.Location.X, dataGridView4.Location.Y + 20);
 
-                    tabControl1.Height += 22;
+                    dataGridView1.Height += 20;
+                    dataGridView2.Height += 20;
+                    dataGridView3.Height += 20;
+
+                    tabControl1.Height += 20;
                 }
                 else if (!vScrollBar1.Visible)
                 {
                     vScrollBar1.Visible = true;
                 }
 
+                table1.Rows.Add();
+                table2.Rows.Add();
+
                 if (vScrollBar1.Visible)
                 {
-                    vScrollBar1.Maximum = dataGridView1.RowCount;
-                    vScrollBar1.Value = table.FirstDisplayedScrollingRowIndex;
+                    vScrollBar1.Maximum = dataGridView1.RowCount - 9;
+                    vScrollBar1.Value = table.FirstDisplayedScrollingRowIndex + 1;
                 }
             }
         }
@@ -160,13 +163,6 @@ namespace CMI_lab3
             form2.ShowDialog();
         }
 
-        private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            //dataGridView1.FirstDisplayedScrollingRowIndex = 2;
-            //dataGridView2.FirstDisplayedScrollingRowIndex = 2;
-            //dataGridView3.FirstDisplayedScrollingRowIndex = 2;
-        }
-
         private void VScrollBar1_ValueChanged(object sender, EventArgs e)
         {
             dataGridView1.FirstDisplayedScrollingRowIndex = vScrollBar1.Value;
@@ -174,10 +170,24 @@ namespace CMI_lab3
             dataGridView3.FirstDisplayedScrollingRowIndex = vScrollBar1.Value;
         }
 
-        private void DataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            label37.Visible = dataGridView4.Visible = tabControl1.SelectedIndex == 1;
         }
 
+        private void DataGridView2_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            vScrollBar1.Value = dataGridView2.FirstDisplayedScrollingRowIndex;
+        }
+
+        private void DataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            vScrollBar1.Value = dataGridView1.FirstDisplayedScrollingRowIndex;
+        }
+
+        private void DataGridView3_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            vScrollBar1.Value = dataGridView3.FirstDisplayedScrollingRowIndex;
+        }
     }
 }
