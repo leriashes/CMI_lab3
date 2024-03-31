@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Spire.Xls;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace CMI_lab3
 {
@@ -279,6 +281,50 @@ namespace CMI_lab3
                 DeleteRow();
             }
             
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            //Creates workbook
+            Workbook workbook = new Workbook();
+
+            workbook.LoadFromFile("Example.XLS");
+
+            //Gets first worksheet
+            Worksheet sheet = workbook.Worksheets[0];
+
+
+            if (comboBox1.Text != null)
+                sheet.Range["A7"].Text = comboBox1.Text;
+
+            if (comboBox2.Text != null)
+                sheet.Range["A9"].Text = comboBox2.Text;
+
+            if (textBox5.Text != null)
+                sheet.Range["BA13"].Text = textBox5.Text;
+
+            if (textBox1.Text != null)
+                sheet.Range["CA7"].Text = textBox1.Text;
+
+            if (textBox2.Text != null)
+                sheet.Range["CA10"].Text = textBox2.Text;
+
+            if (comboBox5.Text != null)
+                sheet.Range["CA11"].Text = comboBox5.Text;
+
+            if (dateTimePicker1.Text != null)
+            {
+                dateTimePicker1.Format = DateTimePickerFormat.Short;
+                sheet.Range["BL13"].Text = dateTimePicker1.Text;
+                dateTimePicker1.Format = DateTimePickerFormat.Long;
+            }
+                
+
+
+
+            //Save workbook to disk
+            workbook.SaveToFile("Sample.xls");
+
         }
     }
 }

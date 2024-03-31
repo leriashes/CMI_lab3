@@ -121,9 +121,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel30 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -1098,29 +1098,29 @@
             // 
             // panel30
             // 
-            this.panel30.Controls.Add(this.comboBox3);
+            this.panel30.Controls.Add(this.textBox2);
+            this.panel30.Controls.Add(this.textBox1);
             this.panel30.Controls.Add(this.comboBox5);
-            this.panel30.Controls.Add(this.comboBox4);
             this.panel30.Location = new System.Drawing.Point(699, 95);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(200, 111);
             this.panel30.TabIndex = 20;
             // 
-            // comboBox3
+            // textBox2
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "2016639571",
-            "2141051250",
-            "10006475",
-            "52078951",
-            "65386358"});
-            this.comboBox3.Location = new System.Drawing.Point(3, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(192, 21);
-            this.comboBox3.TabIndex = 18;
+            this.textBox2.Location = new System.Drawing.Point(3, 57);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(192, 20);
+            this.textBox2.TabIndex = 22;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(192, 20);
+            this.textBox1.TabIndex = 21;
             // 
             // comboBox5
             // 
@@ -1133,21 +1133,6 @@
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(192, 21);
             this.comboBox5.TabIndex = 20;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "10.71",
-            "10.72",
-            "47.11",
-            "47.24"});
-            this.comboBox4.Location = new System.Drawing.Point(3, 57);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(192, 21);
-            this.comboBox4.TabIndex = 19;
             // 
             // label33
             // 
@@ -1217,6 +1202,7 @@
             this.button2.TabIndex = 27;
             this.button2.Text = "Сохранить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -1426,6 +1412,7 @@
             this.panel26.ResumeLayout(false);
             this.panel27.ResumeLayout(false);
             this.panel30.ResumeLayout(false);
+            this.panel30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1503,8 +1490,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1539,6 +1524,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
