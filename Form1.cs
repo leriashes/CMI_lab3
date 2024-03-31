@@ -318,8 +318,22 @@ namespace CMI_lab3
                 sheet.Range["BL13"].Text = dateTimePicker1.Text;
                 dateTimePicker1.Format = DateTimePickerFormat.Long;
             }
-                
 
+            if (dateTimePicker2.Text != null)
+            {
+                string[] words = dateTimePicker2.Text.Split(' ');
+                sheet.Range["AI17"].Text = words[0];
+                sheet.Range["AL17"].Text = words[1];
+                sheet.Range["AR17"].Text = words[2];
+            }
+
+            if (dateTimePicker3.Text != null)
+            {
+                string[] words = dateTimePicker3.Text.Split(' ');
+                sheet.Range["BZ17"].Text = words[0];
+                sheet.Range["CD17"].Text = words[1];
+                sheet.Range["CJ17"].Text = words[2];
+            }
 
 
             //Save workbook to disk
