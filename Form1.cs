@@ -15,7 +15,7 @@ namespace CMI_lab3
     public partial class Form1 : Form
     {
         int countRows = 1;
-        string[] zaver;
+        string[] zaver = { "", "", "", ""};
 
         string[] OKPO = { "2016639571",
             "2141051250",
@@ -32,11 +32,25 @@ namespace CMI_lab3
             "10.71"
         };
 
+        int[] edizm = { };
+
+        string[] kod = { "105",
+            "127",
+            "162",
+            "164",
+            "165",
+            "169",
+            "171"};
+
+        string[] kodOKEI = {
+            "163",
+            "166",
+            "796"};
+
 
 
         public Form1()
         {
-            zaver = new string[4];
             InitializeComponent();
         }
 
@@ -113,26 +127,39 @@ namespace CMI_lab3
                         }
                     }
 
-                    //for (int i = 0; i < Column3.Items.Count && val2 < 0 && dataGridView1.Rows[e.RowIndex].Cells[2].Value != null; i++)
-                    //{
-                    //    if (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() == Column3.Items[i].ToString())
-                    //    {
-                    //        val2 = i;
-                    //    }
-                    //}
-
-
-                    //if (val1 != val2)
-                    //{
-                    //    if (e.ColumnIndex == 1)
-                    //    {
-                    //        dataGridView1.Rows[e.RowIndex].Cells[2].Value = Column3.Items[val1];
-                    //    }
-                    //    else
-                    //    {
-                    //        dataGridView1.Rows[e.RowIndex].Cells[1].Value = Column2.Items[val2];
-                    //    }
-                    //}
+                    for (int i = 0; i < kod.Length && val2 < 0 && dataGridView1.Rows[e.RowIndex].Cells[2].Value != null; i++)
+                    {
+                        if (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() == kod[i])
+                        {
+                            val2 = i;
+                        }
+                    }
+                    
+                    if (val1 != val2)
+                    {
+                        if (e.ColumnIndex == 1) 
+                        {
+                            if (val1 >= 0)
+                            {
+                                dataGridView1.Rows[e.RowIndex].Cells[2].Value = kod[val1];
+                            }
+                            else
+                            {
+                                dataGridView1.Rows[e.RowIndex].Cells[2].Value = "";
+                            }
+                        }
+                        else
+                        {
+                            if (val2 >= 0)
+                            {
+                                dataGridView1.Rows[e.RowIndex].Cells[1].Value = Column2.Items[val2];
+                            }
+                            else
+                            {
+                                dataGridView1.Rows[e.RowIndex].Cells[1].Value = "";
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -151,6 +178,40 @@ namespace CMI_lab3
                         if (dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString() == Column4.Items[i].ToString())
                         {
                             val1 = i;
+                        }
+                    }
+
+                    for (int i = 0; i < kodOKEI.Length && val2 < 0 && dataGridView2.Rows[e.RowIndex].Cells[1].Value != null; i++)
+                    {
+                        if (dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString() == kodOKEI[i])
+                        {
+                            val2 = i;
+                        }
+                    }
+
+                    if (val1 != val2)
+                    {
+                        if (e.ColumnIndex == 0)
+                        {
+                            if (val1 >= 0)
+                            {
+                                dataGridView2.Rows[e.RowIndex].Cells[1].Value = kodOKEI[val1];
+                            }
+                            else
+                            {
+                                dataGridView2.Rows[e.RowIndex].Cells[1].Value = "";
+                            }
+                        }
+                        else
+                        {
+                            if (val2 >= 0)
+                            {
+                                dataGridView2.Rows[e.RowIndex].Cells[0].Value = Column4.Items[val2];
+                            }
+                            else
+                            {
+                                dataGridView2.Rows[e.RowIndex].Cells[0].Value = "";
+                            }
                         }
                     }
 
