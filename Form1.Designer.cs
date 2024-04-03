@@ -99,6 +99,10 @@
             this.label22 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -142,10 +146,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -872,6 +872,45 @@
             this.dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView2_RowsAdded);
             this.dataGridView2.Leave += new System.EventHandler(this.DataGridView2_Leave);
             // 
+            // Column4
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Column4.FillWeight = 56.32365F;
+            this.Column4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column4.HeaderText = "4";
+            this.Column4.Items.AddRange(new object[] {
+            "г",
+            "кг",
+            "шт"});
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.Width = 126;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 66.45901F;
+            this.Column5.HeaderText = "5";
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column5.Width = 126;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 62.14664F;
+            this.Column6.HeaderText = "6";
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column6.Width = 126;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "7";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 126;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
@@ -1154,6 +1193,7 @@
             this.button1.TabIndex = 26;
             this.button1.Text = "Закрыть";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -1301,45 +1341,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(142, 20);
             this.dateTimePicker1.TabIndex = 33;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Column4.FillWeight = 56.32365F;
-            this.Column4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column4.HeaderText = "4";
-            this.Column4.Items.AddRange(new object[] {
-            "г",
-            "кг",
-            "шт"});
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.Width = 126;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 66.45901F;
-            this.Column5.HeaderText = "5";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column5.Width = 126;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 62.14664F;
-            this.Column6.HeaderText = "6";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column6.Width = 126;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "7";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 126;
             // 
             // Form1
             // 
