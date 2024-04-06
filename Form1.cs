@@ -52,6 +52,7 @@ namespace CMI_lab3
         public Form1()
         {
             InitializeComponent();
+            dateTimePicker3.MinDate = dateTimePicker2.Value;
         }
 
         private void AddRows(int delta, DataGridView table, DataGridView table1, DataGridView table2)
@@ -447,6 +448,11 @@ namespace CMI_lab3
         private void Button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker3.MinDate = dateTimePicker2.Value;
         }
     }
 }
