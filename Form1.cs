@@ -356,7 +356,13 @@ namespace CMI_lab3
             //Creates workbook
             Workbook workbook = new Workbook();
 
-            workbook.LoadFromFile("Example.XLS");
+            string filename = "Example.XLS";
+            string[] exc = { "A", "D", "N", "Q", "U", "Y", "AC", "AH", "AN", "AX", "BB", "BH", "BL", "BQ", "BU", "BY", "CF" };
+
+            if (countRows > 8)
+                filename = "Example1.XLS";
+
+            workbook.LoadFromFile(filename);
 
             //Gets first worksheet
             Worksheet sheet = workbook.Worksheets[0];
@@ -397,6 +403,35 @@ namespace CMI_lab3
             sheet.Range["S34"].Text = zaver[3];
             sheet.Range["AX34"].Text = zaver[2];
 
+            int row = 23;
+
+            for (int i = 0; i < countRows; i++, row++)
+            {
+                for (int j = 0, k = 0; j < 17; j++, k++)
+                {
+                    string cell = exc[j] + row.ToString();
+                    DataGridView table;
+
+                    if (j < 3)
+                    {
+                        table = dataGridView1;
+                    }
+                    else if (j < 7)
+                    {
+                        table = dataGridView2;
+                    }
+                    else
+                    {
+                        table = dataGridView3;
+                    }
+
+                    if (table.Rows[i].Cells[k].Value != null)
+                        sheet.Range[cell].Text = table.Rows[i].Cells[k].Value.ToString();
+
+                    if (j == 2 || j == 6)
+                        k = -1;
+                }
+            }
 
             //Save workbook to disk
             workbook.SaveToFile("Sample.xls");
@@ -411,7 +446,7 @@ namespace CMI_lab3
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }
