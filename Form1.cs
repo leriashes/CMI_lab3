@@ -15,6 +15,7 @@ namespace CMI_lab3
     public partial class Form1 : Form
     {
         int countRows = 1;
+        string prevValue = "";
         string[] zaver = { "", "", "", ""};
 
         string[] OKPO = { "2016639571",
@@ -53,6 +54,7 @@ namespace CMI_lab3
         {
             InitializeComponent();
             dateTimePicker3.MinDate = dateTimePicker2.Value;
+            dataGridView4.Rows.Add();
         }
 
         private void AddRows(int delta, DataGridView table, DataGridView table1, DataGridView table2)
@@ -217,6 +219,80 @@ namespace CMI_lab3
                     }
                 }
             }
+
+            if (e.ColumnIndex == 3)
+            {
+                CountSum(e.RowIndex);
+
+                for (int i = 0; i < dataGridView3.ColumnCount; i += 2)
+                {
+                    CountRes(i);
+                }
+            }
+        }
+
+        private void CountSum(int row) 
+        {
+            if (row >= 0)
+            {
+                for (int i = 1; i < dataGridView3.ColumnCount; i += 2)
+                {
+                    if (dataGridView3.Rows[row].Cells[i - 1].Value == null || dataGridView3.Rows[row].Cells[i - 1].Value.ToString() == "")
+                    {
+                        dataGridView3.Rows[row].Cells[i].Value = "";
+                    }
+                    else
+                    {
+                        int num = Convert.ToInt32(dataGridView3.Rows[row].Cells[i - 1].Value.ToString());
+
+                        if (dataGridView2.Rows[row].Cells[3].Value == null || dataGridView2.Rows[row].Cells[3].Value.ToString() == "")
+                        {
+                            dataGridView3.Rows[row].Cells[i].Value = "";
+                        }
+                        else
+                        {
+                            double cost = Convert.ToDouble(dataGridView2.Rows[row].Cells[3].Value.ToString());
+
+                            dataGridView3.Rows[row].Cells[i].Value = num * cost;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void CountRes(int col)
+        {
+            if (dataGridView4.RowCount == 0)
+            {
+                if (dataGridView4.ColumnCount > 0)
+                {
+                    dataGridView4.Rows.Add();
+
+                    for (int i = 0; i < dataGridView4.ColumnCount; i++)
+                        dataGridView4.Rows[0].Cells[i].Value = 12340;
+                }
+            }
+            else
+            {
+                int sum1 = 0;
+                double sum2 = 0;
+
+                for (int i = 0; i < countRows - 1; i++)
+                {
+                    if (dataGridView3.Rows[i].Cells[col].Value != null && dataGridView3.Rows[i].Cells[col].Value.ToString() != "")
+                    {
+                        sum1 += Convert.ToInt32(dataGridView3.Rows[i].Cells[col].Value.ToString());
+                    }
+
+                    if (dataGridView3.Rows[i].Cells[col + 1].Value != null && dataGridView3.Rows[i].Cells[col + 1].Value.ToString() != "")
+                    {
+                        sum2 += Convert.ToDouble(dataGridView3.Rows[i].Cells[col + 1].Value.ToString());
+                    }
+                }
+
+                dataGridView4.Rows[0].Cells[col].Value = sum1;
+                dataGridView4.Rows[0].Cells[col + 1].Value = sum2;
+            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -244,6 +320,7 @@ namespace CMI_lab3
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             label37.Visible = dataGridView4.Visible = tabControl1.SelectedIndex == 1;
+            dataGridView4.Rows[0].Cells[0].Selected = false;
         }
 
         private void DataGridView2_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -354,7 +431,6 @@ namespace CMI_lab3
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //Creates workbook
             Workbook workbook = new Workbook();
 
             string filename = "Example.XLS";
@@ -365,7 +441,6 @@ namespace CMI_lab3
 
             workbook.LoadFromFile(filename);
 
-            //Gets first worksheet
             Worksheet sheet = workbook.Worksheets[0];
 
 
@@ -406,7 +481,7 @@ namespace CMI_lab3
 
             int row = 23;
 
-            for (int i = 0; i < countRows; i++, row++)
+            for (int i = 0; i < countRows - 1; i++, row++)
             {
                 for (int j = 0, k = 0; j < 17; j++, k++)
                 {
@@ -428,13 +503,14 @@ namespace CMI_lab3
 
                     if (table.Rows[i].Cells[k].Value != null)
                         sheet.Range[cell].Text = table.Rows[i].Cells[k].Value.ToString();
+                    else
+                        sheet.Range[cell].Text = "X";
 
                     if (j == 2 || j == 6)
                         k = -1;
                 }
             }
 
-            //Save workbook to disk
             workbook.SaveToFile("Sample.xls");
 
         }
@@ -453,6 +529,21 @@ namespace CMI_lab3
         private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             dateTimePicker3.MinDate = dateTimePicker2.Value;
+        }
+
+        private void DataGridView3_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex % 2 == 0)
+            {
+                CountSum(e.RowIndex);
+
+                CountRes(e.ColumnIndex);
+            }
+        }
+
+        private void DataGridView4_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView4.Rows[0].Cells[e.ColumnIndex].Selected = false;
         }
     }
 }
