@@ -450,7 +450,11 @@ namespace CMI_lab3
             sheet.Range["BA13"].Text = textBox5.Text;
             sheet.Range["CA7"].Text = textBox1.Text;
             sheet.Range["CA10"].Text = textBox2.Text;
-            sheet.Range["CA11"].Text = comboBox5.Text;
+
+            if (comboBox5.Text == "")
+                sheet.Range["CA11"].Text = "X";
+            else
+                sheet.Range["CA11"].Text = comboBox5.Text;
 
             if (dateTimePicker1.Text != "")
             {
