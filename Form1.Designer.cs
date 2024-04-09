@@ -218,6 +218,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(259, 21);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
+            this.dataGridView1.CurrentCellDirtyStateChanged += new System.EventHandler(this.DataGridView1_CurrentCellDirtyStateChanged);
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_RowEnter);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView1_RowsAdded);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
@@ -412,6 +413,7 @@
             this.dataGridView3.Size = new System.Drawing.Size(670, 21);
             this.dataGridView3.TabIndex = 12;
             this.dataGridView3.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView3_CellValueChanged);
+            this.dataGridView3.CurrentCellDirtyStateChanged += new System.EventHandler(this.DataGridView3_CurrentCellDirtyStateChanged);
             this.dataGridView3.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView3_RowEnter);
             this.dataGridView3.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView3_RowsAdded);
             this.dataGridView3.Leave += new System.EventHandler(this.DataGridView3_Leave);
@@ -894,6 +896,7 @@
             this.dataGridView2.Size = new System.Drawing.Size(545, 21);
             this.dataGridView2.TabIndex = 12;
             this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellValueChanged);
+            this.dataGridView2.CurrentCellDirtyStateChanged += new System.EventHandler(this.DataGridView2_CurrentCellDirtyStateChanged);
             this.dataGridView2.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_RowEnter);
             this.dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridView2_RowsAdded);
             this.dataGridView2.Leave += new System.EventHandler(this.DataGridView2_Leave);

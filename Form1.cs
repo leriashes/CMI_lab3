@@ -436,7 +436,7 @@ namespace CMI_lab3
             string filename = "Example.XLS";
             string[] exc = { "A", "D", "N", "Q", "U", "Y", "AC", "AH", "AN", "AX", "BB", "BH", "BL", "BQ", "BU", "BY", "CF" };
 
-            if (countRows > 8)
+            if (countRows - 1 > 8)
                 filename = "Example1.XLS";
 
             workbook.LoadFromFile(filename);
@@ -501,7 +501,7 @@ namespace CMI_lab3
                         table = dataGridView3;
                     }
 
-                    if (table.Rows[i].Cells[k].Value != null)
+                    if (table.Rows[i].Cells[k].Value != null && table.Rows[i].Cells[k].Value != "")
                         sheet.Range[cell].Text = table.Rows[i].Cells[k].Value.ToString();
                     else
                         sheet.Range[cell].Text = "X";
@@ -509,6 +509,23 @@ namespace CMI_lab3
                     if (j == 2 || j == 6)
                         k = -1;
                 }
+            }
+
+            row = 31;
+
+            if (countRows - 1 > 8)
+            {
+                row = 39;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                string cell = exc[i + 7] + row.ToString();
+                
+                if (dataGridView4.Rows[0].Cells[i].Value != null)
+                    sheet.Range[cell].Text = dataGridView4.Rows[0].Cells[i].Value.ToString();
+                else
+                    sheet.Range[cell].Text = "X";
             }
 
             workbook.SaveToFile("Sample.xls");
@@ -544,6 +561,30 @@ namespace CMI_lab3
         private void DataGridView4_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView4.Rows[0].Cells[e.ColumnIndex].Selected = false;
+        }
+
+        private void DataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.IsCurrentCellDirty)
+            {
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void DataGridView2_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dataGridView2.IsCurrentCellDirty)
+            {
+                dataGridView2.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void DataGridView3_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dataGridView3.IsCurrentCellDirty)
+            {
+                dataGridView3.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
         }
     }
 }
