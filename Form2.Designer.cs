@@ -148,6 +148,7 @@
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
+            "",
             "Бухгалтер",
             "Зав. производством",
             "Зав. цехом",
@@ -156,6 +157,7 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(287, 21);
             this.comboBox4.TabIndex = 23;
+            this.comboBox4.SelectedValueChanged += new System.EventHandler(this.ComboBox4_SelectedValueChanged);
             // 
             // label5
             // 
