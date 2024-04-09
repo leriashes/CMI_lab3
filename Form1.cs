@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -618,6 +619,21 @@ namespace CMI_lab3
             {
                 applyDoc = form3.GetNum();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StreamReader sr = new StreamReader("Number.txt");
+            string line = sr.ReadLine();
+            sr.Close();
+
+            textBox5.Text = line;
+            int num = Convert.ToInt32(line);
+            num += 1;
+
+            StreamWriter sw = new StreamWriter("Number.txt");
+            sw.WriteLine(num);
+            sw.Close();
         }
     }
 }
