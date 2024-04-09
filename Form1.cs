@@ -475,7 +475,7 @@ namespace CMI_lab3
                 sheet.Range["CJ17"].Text = words[2];
             }
 
-            if (countRows - 1 > 8)
+            if (countRows - 1 <= 8)
             {
                 sheet.Range["R32"].Text = zaver[0];
                 sheet.Range["BC32"].Text = zaver[1];
