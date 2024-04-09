@@ -67,6 +67,10 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Абрамова А.Н.",
+            "Полетаев К.А.",
+            "Топалова М.В."});
             this.comboBox1.Location = new System.Drawing.Point(12, 63);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(287, 21);
@@ -85,6 +89,12 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Бухтоярова А.А.",
+            "Ворошина У.Н.",
+            "Железняк Т.В.",
+            "Сальникова В.В.",
+            "Стоянова А.К."});
             this.comboBox2.Location = new System.Drawing.Point(12, 125);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(287, 21);
@@ -103,6 +113,20 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Абрамова А.Н.",
+            "Бухтоярова А.А.",
+            "Ворошина У.Н.",
+            "Железняк Т.В.",
+            "Заварушкина М.М.",
+            "Зайцева Л.И.",
+            "Парускин И.Д.",
+            "Петрова Е.И.",
+            "Полетаев К.А.",
+            "Сальникова В.В.",
+            "Стоянова А.К.",
+            "Топалова М.В.",
+            "Хлопченко И.В."});
             this.comboBox3.Location = new System.Drawing.Point(12, 267);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(287, 21);
@@ -122,6 +146,11 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Бухгалтер",
+            "Зав. производством",
+            "Зав. цехом",
+            "Менеджер"});
             this.comboBox4.Location = new System.Drawing.Point(12, 227);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(287, 21);
