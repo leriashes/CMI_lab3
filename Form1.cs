@@ -549,8 +549,11 @@ namespace CMI_lab3
 
         private void ComboBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Text = OKPO[comboBox1.SelectedIndex];
-            textBox2.Text = OKDP[comboBox1.SelectedIndex];
+            if (comboBox1.SelectedIndex != -1)
+            {
+                textBox1.Text = OKPO[comboBox1.SelectedIndex];
+                textBox2.Text = OKDP[comboBox1.SelectedIndex];
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
