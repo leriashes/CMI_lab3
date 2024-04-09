@@ -475,10 +475,24 @@ namespace CMI_lab3
                 sheet.Range["CJ17"].Text = words[2];
             }
 
-            sheet.Range["R32"].Text = zaver[0];
-            sheet.Range["BC32"].Text = zaver[1];
-            sheet.Range["S34"].Text = zaver[3];
-            sheet.Range["AX34"].Text = zaver[2];
+            if (countRows - 1 > 8)
+            {
+                sheet.Range["R32"].Text = zaver[0];
+                sheet.Range["BC32"].Text = zaver[1];
+                sheet.Range["S34"].Text = zaver[3];
+                sheet.Range["AX34"].Text = zaver[2];
+
+                sheet.Range["BX32"].Text = applyDoc.ToString();
+            }
+            else
+            {
+                sheet.Range["R40"].Text = zaver[0];
+                sheet.Range["BC40"].Text = zaver[1];
+                sheet.Range["S42"].Text = zaver[3];
+                sheet.Range["AX42"].Text = zaver[2];
+
+                sheet.Range["BX40"].Text = applyDoc.ToString();
+            }
 
             int row = 23;
 
