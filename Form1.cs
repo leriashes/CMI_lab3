@@ -15,6 +15,7 @@ namespace CMI_lab3
     public partial class Form1 : Form
     {
         int countRows = 1;
+        int applyDoc = 0;
         string prevValue = "";
         string[] zaver = { "", "", "", ""};
 
@@ -584,6 +585,17 @@ namespace CMI_lab3
             if (dataGridView3.IsCurrentCellDirty)
             {
                 dataGridView3.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(applyDoc);
+            form3.ShowDialog();
+
+            if (form3.DialogResult == DialogResult.OK)
+            {
+                applyDoc = form3.GetNum();
             }
         }
     }

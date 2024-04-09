@@ -212,6 +212,7 @@
             this.MinimumSize = new System.Drawing.Size(327, 393);
             this.Name = "Form2";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Расшифровки подписей";
             this.ResumeLayout(false);
             this.PerformLayout();
