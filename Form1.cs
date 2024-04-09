@@ -548,8 +548,15 @@ namespace CMI_lab3
                     sheet.Range[cell].Text = "X";
             }
 
-            workbook.SaveToFile("Sample.xls");
+            workbook.SaveToFile("Result" + textBox5.Text + ".xls");
 
+
+            int num = Convert.ToInt32(textBox5.Text);
+            num += 1;
+
+            StreamWriter sw = new StreamWriter("Number.txt");
+            sw.WriteLine(num);
+            sw.Close();
         }
 
         private void ComboBox1_TextChanged(object sender, EventArgs e)
@@ -628,12 +635,6 @@ namespace CMI_lab3
             sr.Close();
 
             textBox5.Text = line;
-            int num = Convert.ToInt32(line);
-            num += 1;
-
-            StreamWriter sw = new StreamWriter("Number.txt");
-            sw.WriteLine(num);
-            sw.Close();
         }
     }
 }
