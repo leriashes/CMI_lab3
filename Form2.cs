@@ -14,6 +14,38 @@ namespace CMI_lab3
     {
         string[] zaver2;
 
+        string[] fio = {
+            "Абрамова А.Н.",
+            "Бухтоярова А.А.",
+            "Ворошина У.Н.",
+            "Железняк Т.В.",
+            "Заварушкина М.М.",
+            "Зайцева Л.И.",
+            "Парускин И.Д.",
+            "Петрова Е.И.",
+            "Полетаев К.А.",
+            "Сальникова В.В.",
+            "Стоянова А.К.",
+            "Топалова М.В.",
+            "Хлопченко И.В."};
+
+        int[] job =
+        {
+            2,
+            0,
+            0,
+            0,
+            1,
+            3,
+            3,
+            3,
+            2,
+            0,
+            0,
+            2,
+            1
+        };
+
         public Form2(string[] zaver)
         {
             zaver2 = zaver;
@@ -26,6 +58,18 @@ namespace CMI_lab3
             zaver2[1] = comboBox2.Text;
             zaver2[2] = comboBox3.Text;
             zaver2[3] = comboBox4.Text;
+        }
+
+        private void ComboBox3_SelectedValueChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < fio.Length; i++) 
+            {
+                if (fio[i] == comboBox3.Text)
+                {
+                    comboBox4.SelectedIndex = job[i];
+                    break;
+                }
+            }
         }
     }
 }

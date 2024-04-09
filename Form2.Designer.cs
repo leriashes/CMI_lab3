@@ -131,6 +131,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(287, 21);
             this.comboBox3.TabIndex = 21;
+            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.ComboBox3_SelectedValueChanged);
             // 
             // label4
             // 
