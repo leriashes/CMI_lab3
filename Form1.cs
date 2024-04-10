@@ -427,6 +427,11 @@ namespace CMI_lab3
                 countRows--;
 
                 DeleteRow();
+
+                for (int i = e.Row.Index + 1; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    dataGridView1.Rows[i].Cells[0].Value = i;
+                }
             }
             
         }
